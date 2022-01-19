@@ -1,0 +1,15 @@
+# Persistent alias for Olimex ARM-USB-TINY-H
+KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="002a", ATTRS{product}=="Olimex OpenOCD JTAG ARM-USB-TINY-H", ATTRS{serial}=="FT4HFPYN", SYMLINK+="ttyARMUSB"
+
+# You can uncomment these lines for multiple DevKitC on a PC.
+# cp210x-cfg -m 10c4:ea60 -N "GachaConESP32 Debug Port" -S "ECU-2101-14"
+# cp210x-cfg: https://github.com/DiUS/cp210x-cfg
+KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{product}=="GachaConESP32 Debug Port", ATTRS{serial}=="?*", SYMLINK+="tty$attr{serial} ttyGachaCon%n"
+
+# Switch Science ESPr Developer 32 TypeC
+# http://ssci.io/6364
+KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{product}=="FT231X USB UART", ATTRS{serial}=="?*", SYMLINK+="tty$attr{serial} ttyPWMGen%n"
+
+# Lines for older prototypes
+KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{manufacturer}=="Silicon Labs", ATTRS{serial}=="d1e2af7e25a352d0", SYMLINK+="ttyDevKitC-test"
+KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{manufacturer}=="Silicon Labs", ATTRS{serial}=="d1e2af7e25a352d1", SYMLINK+="ttyDevKitC-proto"

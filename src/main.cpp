@@ -1,7 +1,7 @@
-#include <Arduino.h>
+#include <LEDcController.hpp>
 
 void setup()
 {
-  pinMode(25, OUTPUT);
 }
+
 void loop() {}
